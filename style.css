@@ -89,9 +89,9 @@ body{
     float: right;
 }
 
-
-
-
+#div1{ }
+#div2{ display: none;}
+#div3{ display:none;}
 
 /*Footer*/
 
