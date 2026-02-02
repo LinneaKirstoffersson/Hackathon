@@ -86,11 +86,11 @@ body{
     display: inline-block;
     box-sizing: border-box;
     width: 100%;
-    padding: 5px;
+    padding: 10px;
 }
 #list label:hover{filter: brightness(90%);}
 #list input:checked+label{filter: brightness(80%);}
-#list input:checked+label:hover{filter: brightness(70%);}
+#list input:checked+label:hover{filter: brightness(75%);}
 
 /*Main*/
 
@@ -100,9 +100,9 @@ body{
     float: right;
 }
 
-
-
-
+#div1{ }
+#div2{ display: none;}
+#div3{ display:none;}
 
 /*Footer*/
 

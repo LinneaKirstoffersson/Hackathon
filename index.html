@@ -61,17 +61,11 @@
 
     <section id = "list">
         <form action="" id="listform" >
-            <input type="radio" id="input1" name="input"  onchange="mainarray.forEach(element => {
-                if (document.getElementById()) {
-                    style.display = inline-block;
-                } else {
-                    style.display = none;
-                }
-            });">
+            <input type="radio" id="input1" name="input" onchange="myfunction(1);" checked="checked">
             <label for="input1">input1</label><br>
-            <input type="radio" id="input2" name="input" onchange="document.getElementById('listform').submit();">
+            <input type="radio" id="input2" name="input" onchange="myfunction(2);">
             <label for="input2">input2</label><br>
-            <input type="radio" id="input3" name="input" onchange="document.getElementById('listform').submit();">
+            <input type="radio" id="input3" name="input" onchange="myfunction(3);">
             <label for="input3">input3</label><br>
 
         </form>
@@ -107,7 +101,6 @@
 
     <section id = "main">
         <div id="div1">one test</div>
-        
         <div id="div2">two test</div>
         <div id="div3">three test</div>
 
