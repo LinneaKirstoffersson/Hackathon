@@ -9,10 +9,18 @@
 }
 
 
+
+body{
+    width: 100%;
+}
+
 /*Header*/
 
 #Header{
+    height: 6vw;
+    width: 100%;
     display: flex;
+    background-color: #297373;
 }
 
 
@@ -20,7 +28,10 @@
 /*Navigation list*/
 
 #list{
+    width: 30%;
+    height: 100vw;
     float: left;
+    background-color: black;
 }
 
 
