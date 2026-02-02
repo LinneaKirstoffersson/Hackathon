@@ -8,7 +8,7 @@
     "width" 100;
 }
 
-.roboto-slab {
+.roboto-slab{
   font-family: "Roboto Slab", serif;
   font-optical-sizing: auto;
   font-weight: 400;
@@ -40,7 +40,13 @@ body{
     background-color: #297373;
 }
 
+.loggo h1{
+    font-size: 40px;
+    font-family: "Bricolage Grotesque" ;
+    
+}
 
+#
 
 /*Navigation list*/
 
