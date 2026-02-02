@@ -48,19 +48,20 @@ body{
     width: 20%;
     min-height: calc(100vh - 6vw);
     float: left;
-    background-color: grey;
+    background-color: #ccc;
 
     font-size: 20px;
 }
 
-#list input{
-
+#list input{display: none;}
+#list label{
+    background-color: #ccc;
+    display: inline-block;
+    width: 100%;
 }
-
-input:checked+label{
-    background-color: brown;
-}
-
+#list label:hover{filter: brightness(90%);}
+#list input:checked+label{filter: brightness(80%);}
+#list input:checked+label:hover{filter: brightness(70%);}
 
 /*Main*/
 
