@@ -1,3 +1,6 @@
+
+
+
 *{
     margin: 0;
     padding: 0;
@@ -6,9 +9,29 @@
 }
 
 
+/*Header*/
+
+#Header{
+    display: flex;
+}
 
 
 
+/*Navigation list*/
+
+#list{
+    float: left;
+}
+
+
+
+
+
+/*Main*/
+
+#main{
+    float: right;
+}
 
 
 
