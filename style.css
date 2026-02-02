@@ -57,7 +57,9 @@ body{
 #list label{
     background-color: #ccc;
     display: inline-block;
+    box-sizing: border-box;
     width: 100%;
+    padding: 5px;
 }
 #list label:hover{filter: brightness(90%);}
 #list input:checked+label{filter: brightness(80%);}
