@@ -35,13 +35,13 @@ body{
 
 #Header{
     width: 100%;
-    height: 6vw;
+    height: 8vw;
+    min-height: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #297373;
     box-shadow: 5px 5px 5px #112e2e49;
-
 }
 
 .loggo{
@@ -101,14 +101,17 @@ body{
 }
 
 #div1{ }
-#div2{ display: none;}
+#div2{ display:none;}
 #div3{ display:none;}
 
 /*Footer*/
 
 footer{
-    width: 100%;
-    background-color: blueviolet;
+    width: 100vw;
+    height: 200px;
+    
+    float: inline-end;
+    background-color: #333;
 }
 
 
