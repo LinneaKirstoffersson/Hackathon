@@ -100,7 +100,7 @@ body{
     float: right;
 }
 
-#div1{ }
+#div1{ display:block;}
 #div2{ display:none;}
 #div3{ display:none;}
 
