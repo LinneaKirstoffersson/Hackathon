@@ -126,7 +126,21 @@
 
     </section>
 
+    <template id="assignmentFormTemp"><form class ="frmAssignment" action="" onsubmit="createAssignment()">
+        <input type="text" name="name">
+        <input type="date" name="date">
+        <label for=""><input type="radio" name="importance" value="3" checked ="checked">3</label>
+        <label for=""><input type="radio" name="importance" value="2">2</label>
+        <label for=""><input type="radio" name="importance" value="1">1</label>
+        <input type="submit">
+    </form></template>
 
+    <template id="assignmentTemp"><tr class="assignment">
+        <td><p>name</p></td>
+        <td><p>date</p></td>
+        <td><p>importance</p></td>
+        <td><button onclick="removeAssignment()">delete assignment</button></td>
+    </tr></template>
 </body>
 
 <footer></footer>
