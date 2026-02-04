@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> study website </title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     <!-- robot slab font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -60,13 +60,13 @@
 
 
     <section id = "list">
-        <form action="" id="listform" >
-            <input type="radio" id="input1" name="input" onchange="myfunction(1);" checked="checked">
+        <form action="" id="listform" onsubmit="">
+            <input type="radio" id="input1" name="input" onchange="changeWindow(1);" checked="checked">
             <label for="input1">input1 start</label><br>
-            <input type="radio" id="input2" name="input" onchange="myfunction(2);">
+            <input type="radio" id="input2" name="input" onchange="changeWindow(2);">
             <label for="input2">input2 schedule</label><br>
-            <input type="radio" id="input3" name="input" onchange="myfunction(3);">
-            <label for="input3">input3</label><br>
+            <input type="radio" id="input3" name="input" onchange="changeWindow(3);">
+            <label for="input3">input3 assignments</label><br>
 
         </form>
         
@@ -102,7 +102,15 @@
     <section id = "main">
         <div id="div1">one test</div>
         <div id="div2">two test</div>
-        <div id="div3">three test</div>
+        <div id="div3">
+            <button id="btnassignments" onclick="createAssignmentForm()">Create assignment</button>
+            <table id="tblassignments">
+
+            </table>
+
+
+
+        </div>
 
 
 
