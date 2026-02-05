@@ -111,6 +111,78 @@ body{
 #div2{ display:none;}
 #div3{ display:none;}
 
+/*Assignments*/
+
+#assignmentbtn{
+    width: 15%;
+    padding: 1vw;
+    margin: 3%;
+    border-radius: 1000px;
+    background-color: #C2E7DA;
+}
+
+#assignmentform{
+    display:none;
+    background-color: #C2E7DA;
+    border-radius: 10px;
+    width: 15%;
+    height: 200px;
+    float: left;
+    margin: 3%;
+}
+#assignmentform h5{
+    text-align: center;
+    margin-top: 5%;
+}
+#assignmentform label{
+    font-size: 12px;
+    display: inline;
+    margin: 5%;
+}
+#assignmentform input[type=text]{
+    width: 90%;
+    margin: 5%;
+    border-radius: 1000px;
+    padding-left: 5%;
+    box-sizing: border-box;
+}
+#assignmentform button{
+    width: 40%;
+    height: 3vw;
+    background-color: white;
+    border-radius: 10px;
+    bottom:0px;
+    display: inline;
+    margin: 3%;
+}
+
+#assignmenttable{
+    width: 70%;
+    height: auto;
+    float: right;
+    background-color: #C2E7DA;
+    margin: 3%;
+    padding: 0 1vw 2vw 1vw;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px #112e2e49;
+}
+#assignmenttable tr{
+    border: solid;
+    border-color: #297373;
+    border-width: 1px;
+}
+#assignmenttable td{
+    width: 12%;
+    text-align: center;
+
+    margin-top: 20px;
+
+
+}
+#assignmenttable th{
+    padding: 1vw;
+}
+
 /*Footer*/
 
 footer{

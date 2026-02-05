@@ -115,15 +115,27 @@
                 Need help with gymnasium, <br> study better is here to help!
             </h2>
             <div class="rightbox">
-                <img src="star-icon-five-stars-rating.png" alt="four and a half star rating img"
+                <img src="star-icon-five-stars-rating.png" alt="four and a half star rating img">
             </div>
         </div>
         <div id="div2">two test</div>
         <div id="div3">
-            <button id="btnassignments" onclick="createAssignmentForm()">Create assignment</button>
-            <table id="tblassignments">
 
-            </table>
+            <button id="assignmentbtn" onclick="document.getElementById('assignmentform').style.display ='block'; document.getElementById('assignmentbtn').style.display ='none';">Create assignment</button>
+            <div id="assignmentform">        
+                <h5>Add an assignment</h5>
+                <label for="name">Name:</label>
+                <input type="text" name="name" id="assname">
+                <input type="date" name="date" id="assdate">
+                <select name="importance" id="assimp">
+                    <option value="high"></option>
+                    <option value="medium"></option>
+                    <option value="low"></option>
+                </select>
+                <button onclick="createAssignment()">Add assignment</button>
+                <button onclick="document.getElementById('assignmentform').style.display ='none'; document.getElementById('assignmentbtn').style.display ='inline';">Cancel</button>
+            </div>
+            <table id="assignmenttable"><thead><th>Assignments:</th></thead></table>
 
 
 
@@ -142,22 +154,6 @@
 
 
     </section>
-
-    <template id="assignmentFormTemp"><form class ="frmAssignment" action="" onsubmit="createAssignment()">
-        <input type="text" name="name">
-        <input type="date" name="date">
-        <label for=""><input type="radio" name="importance" value="3" checked ="checked">3</label>
-        <label for=""><input type="radio" name="importance" value="2">2</label>
-        <label for=""><input type="radio" name="importance" value="1">1</label>
-        <input type="submit">
-    </form></template>
-
-    <template id="assignmentTemp"><tr class="assignment">
-        <td><p>name</p></td>
-        <td><p>date</p></td>
-        <td><p>importance</p></td>
-        <td><button onclick="removeAssignment()">delete assignment</button></td>
-    </tr></template>
 </body>
 
 <footer></footer>

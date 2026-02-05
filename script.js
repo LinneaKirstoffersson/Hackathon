@@ -11,8 +11,8 @@ function changeWindow(a){
 //Assignments
 
 let assignmentsArray;
-if (sessionStorage.getItem("assignmentsArray")!== null) {
-    assignmentsArray = JSON.parse(sessionStorage.getItem("assignmentsArray"));
+if (localStorage.getItem("assignmentsArray")!== null) {
+    assignmentsArray = JSON.parse(localStorage.getItem("assignmentsArray"));
 } else {
     assignmentsArray =[];
 }
@@ -20,25 +20,25 @@ if (sessionStorage.getItem("assignmentsArray")!== null) {
 
 for (let i = 0; i < assignmentsArray.length; i++) {
     let a = document.createElement("tr");
-    a.getAttribute("class", "assignment");
-    a.getAttribute("id", "assignment"+i);
     a.innerHTML = assignmentsArray[i];
-    document.getElementById("tblassignments").appendChild(a);
-}
-
-function createAssignmentForm(){
-    let f = document.getElementById("assignmentFormTemp");
-    document.getElementById("div3").appendChild(f.content);
+    a.getAttribute("id", "assignment"+i);
+    document.getElementById("assignmenttable").appendChild(a);
 }
 
 function createAssignment(){
-    let a = document.getElementById("assignmentTemp");
+    let a = document.createElement("tr");
+    a.innerHTML ="<td>"+ document.getElementById("assname").value+"</td><td>"+ document.getElementById("assdate").value+"</td><td>importance</td><td><button onclick='removeAssignment()'>delete assignment</button></td>";
+    a.getAttribute("class", "assignmenttablerow");
     assignmentsArray.push(a.innerHTML);
-    sessionStorage.setItem("assignmentsArray", JSON.stringify(assignmentsArray));
+    localStorage.setItem("assignmentsArray", JSON.stringify(assignmentsArray));
+    document.getElementById("assignmenttable").appendChild(a);
+    document.getElementById("assname").value = "";
+    document.getElementById("assdate").value = "";
+    document.getElementById("assignmentform").style.display ="none";
+    document.getElementById("assignmentbtn").style.display ='inline';
 }
-
 function removeAssignment(){
     assignmentsArray.splice(event.srcElement.parentNode.parentNode.id.substr(-1),1);
-    sessionStorage.setItem("assignmentsArray", JSON.stringify(assignmentsArray));
+    localStorage.setItem("assignmentsArray", JSON.stringify(assignmentsArray));
     event.srcElement.parentNode.parentNode.remove();
 }
