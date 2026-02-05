@@ -35,13 +35,13 @@ body{
 
 #Header{
     width: 100%;
-    height: 8vw;
-    min-height: 80px;
+    height: 6vw;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #297373;
     box-shadow: 5px 5px 5px #112e2e49;
+
 }
 
 .loggo{
@@ -104,30 +104,11 @@ body{
 #div2{ display:none;}
 #div3{ display:none;}
 
-/*assignments*/
-
-.frmAssignment{
-    background-color: #C2E7DA;
-}
-.frmAssignment >*{
-    display: block;
-    margin: 2px;
-}
-
-#tblassignments button{
-    width: 50px;
-    height: 30px;
-}
-
-
 /*Footer*/
 
 footer{
-    width: 100vw;
-    height: 200px;
-    
-    float: inline-end;
-    background-color: #333;
+    width: 100%;
+    background-color: blueviolet;
 }
 
 
