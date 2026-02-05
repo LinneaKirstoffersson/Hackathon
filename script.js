@@ -1,11 +1,3 @@
-var assignmentamount;
-
-if (sessionStorage.length <2) {
-    assignmentamount = 0;
-
-} else{
-    assignmentamount = sessionStorage.getItem("assignamount");
-}
 
 function changeWindow(a){
     document.getElementById("div1").style.display ="none";
@@ -18,10 +10,19 @@ function changeWindow(a){
 
 //Assignments
 
-for (let i = 0; i < sessionStorage.length; i++) {
+let assignmentsArray;
+if (sessionStorage.getItem("assignmentsArray")!== null) {
+    assignmentsArray = JSON.parse(sessionStorage.getItem("assignmentsArray"));
+} else {
+    assignmentsArray =[];
+}
+
+
+for (let i = 0; i < assignmentsArray.length; i++) {
     let a = document.createElement("tr");
     a.getAttribute("class", "assignment");
-    a.innerHTML = sessionStorage.getItem("id"+assignmentamount);
+    a.getAttribute("id", "assignment"+i);
+    a.innerHTML = assignmentsArray[i];
     document.getElementById("tblassignments").appendChild(a);
 }
 
@@ -31,17 +32,13 @@ function createAssignmentForm(){
 }
 
 function createAssignment(){
-    assignmentamount++;
     let a = document.getElementById("assignmentTemp");
-    let clon = a.content.cloneNode(true);
-    a.innerHTML.id = "id"+ assignmentamount;
-    document.getElementById("tblassignments").appendChild(clon);
-    sessionStorage.setItem(a.innerHTML.id, a.innerHTML);
-    sessionStorage.setItem("assignamount", assignmentamount)
+    assignmentsArray.push(a.innerHTML);
+    sessionStorage.setItem("assignmentsArray", JSON.stringify(assignmentsArray));
 }
 
 function removeAssignment(){
-    sessionStorage.removeItem(event.srcElement.parentNode.parentNode.id);
+    assignmentsArray.splice(event.srcElement.parentNode.parentNode.id.substr(-1),1);
+    sessionStorage.setItem("assignmentsArray", JSON.stringify(assignmentsArray));
     event.srcElement.parentNode.parentNode.remove();
-    
 }
