@@ -104,7 +104,41 @@ body{
     float: right;
 }
 
-#div1{ display:block;}
+#div1{
+    display: flex;
+    padding: 2%;
+    gap: 6%;
+
+}
+.leftbox {
+    padding: 1%;
+    background-color: #FDFAF9 ;
+    display: inline-flex;
+    flex-direction: column;
+    border: 5px double #297373;
+    border-radius: 5px;
+
+}
+.leftbox p {
+    font-size: 15px;
+}
+.leftbox ul li {
+    display: inline-block;
+    list-style: none;
+    font-size: 12px;
+}
+
+.rightbox{
+    padding: 1%;
+    background-color: #FDFAF9 ;
+    display: inline-flex;
+    flex-direction: column;
+    border: 5px double #297373;
+    border-radius: 5px;
+}
+
+
+
 #div2{ display:none;}
 #div3{ display:none;}
 
