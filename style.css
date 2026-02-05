@@ -35,7 +35,7 @@ body{
 
 #Header{
     width: 100%;
-    height: 6vw;
+    height: 7vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -45,14 +45,21 @@ body{
 }
 
 .loggo{
+    display: flex;
     margin: 0 auto;
-    margin-left: 45%;
+    margin-left: 25%;
 }
 .loggo h1{
-    
-    font-size: 35px;
+    color: #C2E7DA;
+    font-size: 40px;
     font-family: "Bricolage Grotesque" ;
     margin-right: auto;
+    white-space: nowrap;
+}
+
+.loggo h1 span{
+    color: #1F1F1F;
+    font-family: "Bricolage Grotesque" ;
 }
 
 .login{
