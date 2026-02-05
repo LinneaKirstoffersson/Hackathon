@@ -28,7 +28,6 @@
 
 body{
     width: 100%;
-    min-height: 100vh;
 }
 
 /*Header*/
@@ -41,7 +40,6 @@ body{
     align-items: center;
     background-color: #297373;
     box-shadow: 5px 5px 5px #112e2e49;
-
 }
 
 .loggo{
@@ -83,7 +81,6 @@ body{
     min-height: calc(100vh - 6vw);
     float: left;
     background-color: #ccc;
-
     font-size: 20px;
 }
 
@@ -119,6 +116,7 @@ body{
     margin: 3%;
     border-radius: 1000px;
     background-color: #C2E7DA;
+    box-shadow: 2px 2px 5px #112e2e49;
 }
 
 #assignmentform{
@@ -129,6 +127,7 @@ body{
     height: 200px;
     float: left;
     margin: 3%;
+    box-shadow: 2px 2px 5px #112e2e49;
 }
 #assignmentform h5{
     text-align: center;
@@ -154,6 +153,7 @@ body{
     bottom:0px;
     display: inline;
     margin: 3%;
+    
 }
 
 #assignmenttable{
@@ -182,12 +182,25 @@ body{
 #assignmenttable th{
     padding: 1vw;
 }
+#assignmenttable button{
+    background-color: white;
+    border-radius: 50px;
+    padding:3%;
+    margin: 3%;
+}
+button:hover{
+    filter: brightness(105%);
+    transition: 0.05s;
+
+}
 
 /*Footer*/
 
 footer{
     width: 100%;
-    background-color: blueviolet;
+    background-color: #333;
+    float: right;
+    height: 15vw;
 }
 
 
