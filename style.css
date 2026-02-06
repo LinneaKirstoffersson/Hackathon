@@ -60,19 +60,6 @@ body{
     font-family: "Bricolage Grotesque" ;
 }
 
-.login{
-    display: inline-block;
-    margin-left: 40%;
-    
-}
-.login img {
-
-    max-width: 30%;
-}
-
-.login img :hover {
-    text-shadow: 4px 4px;
-}
 
 /*Navigation list*/
 
