@@ -17,22 +17,30 @@ if (localStorage.getItem("flashcardsArray")!== null) {
 for (let i = 0; i < flashcardsArray.length; i++) {
     let a = document.createElement("div");
     a.innerHTML = flashcardsArray[i];
-    a.getAttribute("id", "flashcards"+i);
-    a.classList.add("flashcard");
+
+
     document.getElementById("flashcards").appendChild(a);
+    a.setAttribute("id", "flashcards"+i);
+    a.classList.add("flashcard");
 }
 function createFlashcards(){
     let a = document.createElement("div");
-
-    
     a.innerHTML = "<div><table class='hiddentable'></table></div><div id ="+document.getElementById("flashcardstxt").value+"><button onclick='useFlashcards();'>Use flashcards</><button onclick='editFlashcards();'>Edit flashcards</><button onclick='removeFlashcards();'>Remove pile</></div>";
     a.classList.add("flashcard");
     document.getElementById("flashcards").appendChild(a);
+    a.setAttribute("id", "flasss"+flashcardsArray.length);
     flashcardsArray.push(a.innerHTML);
     localStorage.setItem("flashcardsArray", JSON.stringify(flashcardsArray));
 }
 const cur = {
+    num: 1,
     floo: "q",    
+    get ha() {
+        return this.num;
+      },
+      set ha(ha) {
+          this.num = ha;
+        },
     get flash() {
       return this.floo;
     },
@@ -48,20 +56,23 @@ function useFlashcards(){
     a.innerHTML = "<p></p><p class='answer'></p><div><button onclick='previousSlide();'>Previous</button><button onclick='revealAnswer();'>Reveal</button><button onclick='nextSlide();'>Next</button><button onclick='finishCards();'>Finish</button></div>";
     a.style.display = "inline-block";
     document.getElementById("flashcards").style.display = "none"
+    cur.num =0;
     flashSlide(0);
 
 }
 function flashSlide(a){
 
     const b = document.getElementById("flashcardsuse");
-    b.childNodes[0].innerHTML = document.getElementById(cur.flash).firstChild.firstChild.childNodes[a].childNodes[0].innerhtml;
-    b.childNodes[1].innerHTML = document.getElementById(cur.flash).firstChild.firstChild.childNodes[a].childNodes[1].innerhtml;
+    b.getElementsByTagName("p")[0].innerHTML = document.getElementById(cur.flash).getElementsByTagName("div")[0].getElementsByTagName("table")[0].getElementsByTagName("tr")[a].getElementsByTagName("td")[0].innerhtml;
+    b.getElementsByTagName("p")[1].innerHTML = document.getElementById(cur.flash).getElementsByTagName("div")[0].getElementsByTagName("table")[0].getElementsByTagName("tr")[a].getElementsByTagName("td")[1].innerhtml;
 }
 function  previousSlide(){
-
+    flashSlide(cur.num);
+    cur.num = cur.num-1;
 }
 function nextSlide(){
-    event.srcElement.parentNode
+    flashSlide(cur.num);
+    cur.num = cur.num+1;
 }
 function revealAnswer(){
     let a =event.srcElement.parentNode.parentNode.childNodes[1];
