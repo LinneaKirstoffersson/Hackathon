@@ -21,18 +21,50 @@ for (let i = 0; i < flashcardsArray.length; i++) {
     a.classList.add("flashcard");
     document.getElementById("flashcards").appendChild(a);
 }
-
 function createFlashcards(){
     let a = document.createElement("div");
     a.getAttribute("id", flashcardsArray.length);
+    
     a.innerHTML = "<div><table class='hiddentable'></table></div><div id ="+document.getElementById("flashcardstxt").value+"><button onclick='useFlashcards();'>Use flashcards</><button onclick='editFlashcards();'>Edit flashcards</><button onclick='removeFlashcards();'>Remove pile</></div>";
     a.classList.add("flashcard");
     document.getElementById("flashcards").appendChild(a);
     flashcardsArray.push(a.innerHTML);
     localStorage.setItem("flashcardsArray", JSON.stringify(flashcardsArray));
 }
+var currentFlash;
 function useFlashcards(){
+    currentFlash = event.srcElement.parentNode.parentNode.id;
+    const b = event.srcElement.parentNode.parentNode.firstChild.firstChild.innerHTML;
+    let a =document.getElementById("flashcardsuse");
+    a.innerHTML = "<p></p><p class='answer'></p><div><button onclick='previousSlide();'>Previous</button><button onclick='revealAnswer();'>Reveal</button><button onclick='nextSlide();'>Next</button><button onclick='finishCards();'>Finish</button></div>";
+    a.style.display = "inline-block";
+    document.getElementById("flashcards").style.display = "none"
+    flashSlide(0);
 
+}
+function flashSlide(a){
+
+    const b = document.getElementById("flashcardsuse");
+    b.childNodes[0].innerHTML = document.getElementById(currentFlash).firstChild.childNodes[0].childNodes[a].childNodes[0].innerhtml;
+    b.childNodes[1].innerHTML = document.getElementById(currentFlash).firstChild.childNodes[0].childNodes[a].childNodes[1].innerhtml;
+}
+function  previousSlide(){
+    
+}
+function nextSlide(){
+    event.srcElement.parentNode
+}
+function revealAnswer(){
+    let a =event.srcElement.parentNode.parentNode.childNodes[1];
+    if (a.style.display == "none") {
+        a.style.display = "block";
+    } else {
+        a.style.display = "none";
+    }
+}
+function finishCards(){
+    document.getElementById("flashcardsuse").style.display = "none";
+    document.getElementById("flashcards").style.display = "flex"
 }
 function editFlashcards(){
     document.getElementById("flashcardsedit").style.display ="inline-block";

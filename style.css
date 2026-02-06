@@ -244,9 +244,9 @@ body{
 #asserr{
     display: none;
     color: red;
-    font-size: auto;
+    font-size: 8px;
     width: 90%;
-    margin: 0 5% 5%;
+    margin: 0 5%;
 }
 #assignmentform label{
     font-size: 12px;
