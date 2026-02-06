@@ -24,7 +24,8 @@ for (let i = 0; i < flashcardsArray.length; i++) {
 
 function createFlashcards(){
     let a = document.createElement("div");
-    a.innerHTML = "<div><table class='hiddentable'></table></div><div><button onclick='useFlashcards();'>Use flashcards</><button onclick='editFlashcards();'>Edit flashcards</><button onclick='removeFlashcards();'>Remove pile</></div>";
+    a.getAttribute("id", flashcardsArray.length);
+    a.innerHTML = "<div><table class='hiddentable'></table></div><div id ="+document.getElementById("flashcardstxt").value+"><button onclick='useFlashcards();'>Use flashcards</><button onclick='editFlashcards();'>Edit flashcards</><button onclick='removeFlashcards();'>Remove pile</></div>";
     a.classList.add("flashcard");
     document.getElementById("flashcards").appendChild(a);
     flashcardsArray.push(a.innerHTML);
@@ -35,11 +36,18 @@ function useFlashcards(){
 }
 function editFlashcards(){
     document.getElementById("flashcardsedit").style.display ="inline-block";
-    document.getElementById("flashcardstbl").innerHTML = event.srcElement.parentNode.parentNode.childNodes[0].childNodes[0].innerHTML;
+    document.getElementById("flashcardsedit").getElementsByTagName("p")[0].innerHTML = event.srcElement.parentNode.id;
+    document.getElementById("flashcardstbl").innerHTML = event.srcElement.parentNode.parentNode.firstChild.firstChild.innerHTML;
 }
 function saveFlashcards(){
+
     let a = document.getElementById("flashcardstbl").innerHTML;
-    
+    let b =document.getElementById(event.srcElement.parentNode.getElementsByTagName("p")[0].innerHTML).parentNode;
+    let c = b.innerHTML;
+    b.firstChild.firstChild.innerHTML = a;
+    flashcardsArray.splice(flashcardsArray.indexOf(c),1, b.innerHTML);
+    localStorage.setItem("flashcardsArray", JSON.stringify(flashcardsArray));
+    document.getElementById("flashcardsedit").getElementsByTagName("p")[0].innerHTML = "";
     document.getElementById("flashcardsedit").style.display = "none";
 }
 
