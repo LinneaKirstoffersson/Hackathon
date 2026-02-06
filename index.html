@@ -120,21 +120,28 @@
         <div id="div2">two test</div>
         <div id="div3">
 
-            <button id="assignmentbtn" onclick="document.getElementById('assignmentform').style.display ='block'; document.getElementById('assignmentbtn').style.display ='none';">Create assignment</button>
+            <button id="assignmentbtn" 
+            onclick="document.getElementById('assignmentform').style.display ='block'; 
+            document.getElementById('assignmentbtn').style.display ='none'; ">Create assignment</button>
             <div id="assignmentform">        
                 <h5>Add an assignment</h5>
+                <p id="asserr">Please enter name and deadline</p>
                 <label for="name">Name:</label>
                 <input type="text" name="name" id="assname">
+                <label for="date">Deadline:</label>
                 <input type="date" name="date" id="assdate">
+                <label for="importance">Importance:</label>
                 <select name="importance" id="assimp">
-                    <option value="high"></option>
-                    <option value="medium"></option>
-                    <option value="low"></option>
+                    <option value="High">High</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Low">Low</option>
                 </select>
-                <button onclick="createAssignment()">Add assignment</button>
-                <button onclick="document.getElementById('assignmentform').style.display ='none'; document.getElementById('assignmentbtn').style.display ='inline';">Cancel</button>
+                <button onclick="createAssignment()">Add</button>
+                <button id="cancelbutton"onclick ="document.getElementById('assignmentform').style.display ='none'; 
+                document.getElementById('assignmentbtn').style.display ='inline-block'; 
+                document.getElementById('asserr').style.display = 'none';">Cancel</button>
             </div>
-            <table id="assignmenttable"><thead><th>Assignments:</th></thead></table>
+            <table id="assignmenttable"><thead><th>Assignments:</th><th>Deadline:</th><th>Importance:</th><th></th></thead></table>
 
 
 
