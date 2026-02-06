@@ -23,7 +23,7 @@ for (let i = 0; i < flashcardsArray.length; i++) {
 }
 function createFlashcards(){
     let a = document.createElement("div");
-    a.getAttribute("id", flashcardsArray.length);
+
     
     a.innerHTML = "<div><table class='hiddentable'></table></div><div id ="+document.getElementById("flashcardstxt").value+"><button onclick='useFlashcards();'>Use flashcards</><button onclick='editFlashcards();'>Edit flashcards</><button onclick='removeFlashcards();'>Remove pile</></div>";
     a.classList.add("flashcard");
@@ -31,9 +31,18 @@ function createFlashcards(){
     flashcardsArray.push(a.innerHTML);
     localStorage.setItem("flashcardsArray", JSON.stringify(flashcardsArray));
 }
-var currentFlash;
+const cur = {
+    floo: "q",    
+    get flash() {
+      return this.floo;
+    },
+    set flash(flash) {
+        this.floo = flash;
+      }
+  };
 function useFlashcards(){
-    currentFlash = event.srcElement.parentNode.parentNode.id;
+    let h = event.target.parentNode.parentNode.id;
+    cur.flash = h;
     const b = event.srcElement.parentNode.parentNode.firstChild.firstChild.innerHTML;
     let a =document.getElementById("flashcardsuse");
     a.innerHTML = "<p></p><p class='answer'></p><div><button onclick='previousSlide();'>Previous</button><button onclick='revealAnswer();'>Reveal</button><button onclick='nextSlide();'>Next</button><button onclick='finishCards();'>Finish</button></div>";
@@ -45,11 +54,11 @@ function useFlashcards(){
 function flashSlide(a){
 
     const b = document.getElementById("flashcardsuse");
-    b.childNodes[0].innerHTML = document.getElementById(currentFlash).firstChild.childNodes[0].childNodes[a].childNodes[0].innerhtml;
-    b.childNodes[1].innerHTML = document.getElementById(currentFlash).firstChild.childNodes[0].childNodes[a].childNodes[1].innerhtml;
+    b.childNodes[0].innerHTML = document.getElementById(cur.flash).firstChild.firstChild.childNodes[a].childNodes[0].innerhtml;
+    b.childNodes[1].innerHTML = document.getElementById(cur.flash).firstChild.firstChild.childNodes[a].childNodes[1].innerhtml;
 }
 function  previousSlide(){
-    
+
 }
 function nextSlide(){
     event.srcElement.parentNode
