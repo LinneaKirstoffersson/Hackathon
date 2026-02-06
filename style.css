@@ -91,7 +91,7 @@ body{
     height: auto;
     float: right;
 }
-
+/*start*/
 #div1{
     display: block;
     padding: 2%;
@@ -103,8 +103,9 @@ body{
     flex-direction: column;
     float: left;
     margin: 0;
-    border-radius: 10px;
+    border-radius: 15px;
     height: 10rem;
+    box-shadow: 2px 2px 5px #2973734f;
 
 }
 .leftbox p {
@@ -137,8 +138,9 @@ body{
     display: inline-flex;
     flex-direction: column;
     float:right;
-    border-radius: 10px;
+    border-radius: 15px;
     cursor:default;
+    box-shadow: 2px 2px 5px #2973734f;
 }
 
 .rightbox img {
@@ -151,7 +153,10 @@ body{
 }
 
 
-#div2{ display:none;}
+#div2{ 
+    display:none;
+    padding: 2%;
+}
 #div3{ display:none;}
 
 /*Flash cards*/
@@ -159,26 +164,53 @@ body{
 #flashcardsbtn{
     width: 50px;
     height: 50px;
+    background-color:  #297373;
     float: left;
+    border-radius: 20px;
+    margin: 1%;
+    box-shadow: 2px 2px 2px #2973734f;
+}
+
+#flashcardsbtn:hover{
+    box-shadow: 3px 3px 5px #2973734f;
+    transition: 0.1s ease-in;
+
 }
 #flashcards{
     width: 70%;
     float: right;
     display: flex;
     flex-wrap: wrap;
+    padding-bottom: 2rem; 
+    border-radius: 15px;
+    margin-top: 1%;
+
+
 }
+
 .flashcard{
-    background-color: #1F1F1F;
+    padding: 1%;
+    background-color: #C2E7DA ;
+    border-radius: 25px;
+    box-shadow: 2px 2px 5px #2973734f;
     height: 5vw;
     margin-left: 5%;
     margin-top: 5%;
     width: 25%;
+
 }
 #flashcardsedit{
     display: none;
     float: left;
-    background-color: #1F1F1F;
+    padding: 1%;
+    background-color: #297373;
+    border-radius: 20px;
+    box-shadow: 2px 2px 5px #2973734f; 
+
 }
+
+
+
 .hiddentable{display: none;}
 
 
@@ -191,7 +223,7 @@ body{
     margin: 3%;
     border-radius: 1000px;
     background-color: #C2E7DA;
-    box-shadow: 2px 2px 5px #112e2e49;
+    box-shadow: 2px 2px 2px #2973734f;
     font-size: 14px;
 }
 
@@ -203,7 +235,7 @@ body{
     height: auto;
     float: left;
     margin: 3%;
-    box-shadow: 2px 2px 5px #112e2e49;
+    box-shadow: 2px 2px 5px #2973734f;
 }
 #assignmentform h5{
     text-align: center;
@@ -246,7 +278,7 @@ body{
     margin: 3%;
     padding: 0 1vw 2vw 1vw;
     border-radius: 10px;
-    box-shadow: 2px 2px 5px #112e2e49;
+    box-shadow: 2px 2px 5px #2973734f;
     border-collapse: collapse;
     overflow: hidden;
 }
@@ -272,15 +304,15 @@ tr:nth-child(even) {background-color: #a7dcca;}
 }
 button:hover{
     filter: brightness(105%);
-    transition: 0.05s;
-
+    transition: 0.1s;
+    box-shadow: 3px 3px 5px #2973734f;
 }
 
 /*Footer*/
 
 footer{
     width: 100%;
-    background-color: #333;
+    background-color:  #297373;;
     float: right;
     height: 15vw;
 }
