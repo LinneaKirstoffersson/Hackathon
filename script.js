@@ -6,6 +6,56 @@ function changeWindow(a){
 
     document.getElementById("div"+a).style.display = "block";
 }
+//Flash cards
+let flashcardsArray;
+if (localStorage.getItem("flashcardsArray")!== null) {
+    flashcardsArray = JSON.parse(localStorage.getItem("flashcardsArray"));
+} else {
+    flashcardsArray =[];
+}
+
+for (let i = 0; i < flashcardsArray.length; i++) {
+    let a = document.createElement("div");
+    a.innerHTML = flashcardsArray[i];
+    a.getAttribute("id", "flashcards"+i);
+    a.classList.add("flashcard");
+    document.getElementById("flashcards").appendChild(a);
+}
+
+function createFlashcards(){
+    let a = document.createElement("div");
+    a.innerHTML = "<div><table class='hiddentable'></table></div><div><button onclick='useFlashcards();'>Use flashcards</><button onclick='editFlashcards();'>Edit flashcards</><button onclick='removeFlashcards();'>Remove pile</></div>";
+    a.classList.add("flashcard");
+    document.getElementById("flashcards").appendChild(a);
+    flashcardsArray.push(a.innerHTML);
+    localStorage.setItem("flashcardsArray", JSON.stringify(flashcardsArray));
+}
+function useFlashcards(){
+
+}
+function editFlashcards(){
+    document.getElementById("flashcardsedit").style.display ="inline-block";
+    document.getElementById("flashcardstbl").innerHTML = event.srcElement.parentNode.parentNode.childNodes[0].childNodes[0].innerHTML;
+}
+function saveFlashcards(){
+    let a = document.getElementById("flashcardstbl").innerHTML;
+    
+    document.getElementById("flashcardsedit").style.display = "none";
+}
+
+function addFlashcard(){
+    let a = document.createElement("tr")
+    a.innerHTML = "<td>"+document.getElementById("firstside").value+"</td><td>"+document.getElementById("secondside").value+"</td><td><button onclick ='removeFlashcard();'></></td>";
+    document.getElementById("flashcardstbl").appendChild(a);
+    document.getElementById("firstside").value = "";
+    document.getElementById("secondside").value = "";
+}
+function removeFlashcards(){
+    flashcardsArray.splice(event.srcElement.parentNode.parentNode.id.substr(-1),1);
+    localStorage.setItem("flashcardsArray", JSON.stringify(flashcardsArray));
+    event.srcElement.parentNode.parentNode.remove();
+}
+
 
 
 //Assignments
@@ -24,7 +74,6 @@ for (let i = 0; i < assignmentsArray.length; i++) {
     a.getAttribute("id", "assignment"+i);
     document.getElementById("assignmenttable").appendChild(a);
 }
-
 function createAssignment(){
     const assname = document.getElementById("assname");
     const assdate = document.getElementById("assdate");

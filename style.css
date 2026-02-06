@@ -88,6 +88,7 @@ body{
 #main{
     width: 80%;
     min-height: calc(100vh - 6vw);
+    height: auto;
     float: right;
 }
 
@@ -152,6 +153,35 @@ body{
 
 #div2{ display:none;}
 #div3{ display:none;}
+
+/*Flash cards*/
+
+#flashcardsbtn{
+    width: 50px;
+    height: 50px;
+    float: left;
+}
+#flashcards{
+    width: 70%;
+    float: right;
+    display: flex;
+    flex-wrap: wrap;
+}
+.flashcard{
+    background-color: #1F1F1F;
+    height: 5vw;
+    margin-left: 5%;
+    margin-top: 5%;
+    width: 25%;
+}
+#flashcardsedit{
+    display: none;
+    float: left;
+    background-color: #1F1F1F;
+}
+.hiddentable{display: none;}
+
+
 
 /*Assignments*/
 
