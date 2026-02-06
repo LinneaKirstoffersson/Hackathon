@@ -162,8 +162,8 @@ body{
 /*Flash cards*/
 
 #flashcardsbtn{
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     background-color:  #297373;
     float: left;
     border-radius: 20px;
@@ -209,6 +209,10 @@ body{
 
 }
 
+#firstside{
+    margin-right: 5px;
+
+}
 
 
 .hiddentable{display: none;}
