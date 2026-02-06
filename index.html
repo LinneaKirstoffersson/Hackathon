@@ -89,7 +89,18 @@
                 <img src="star-icon-five-stars-rating.png" alt="four and a half star rating img">
             </div>
         </div>
-        <div id="div2">two test</div>
+        <div id="div2">
+            <button id="flashcardsbtn" onclick="createFlashcards();"></button>
+            <div id="flashcardsedit">
+                <p></p>
+                <button onclick="addFlashcard();">Add flashcard</button>
+                <input type="text" id="firstside"><input type="text" id="secondside">
+                <table id="flashcardstbl"></table>
+                <button onclick="saveFlashcards();">Save</button>
+            </div>
+            <div id="flashcardsuse"></div>
+            <div id="flashcards"></div>
+        </div>
         <div id="div3">
 
             <button id="assignmentbtn" 
