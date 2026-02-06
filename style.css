@@ -162,6 +162,7 @@ body{
     border-radius: 1000px;
     background-color: #C2E7DA;
     box-shadow: 2px 2px 5px #112e2e49;
+    font-size: 14px;
 }
 
 #assignmentform{
@@ -169,37 +170,43 @@ body{
     background-color: #C2E7DA;
     border-radius: 10px;
     width: 15%;
-    height: 200px;
+    height: auto;
     float: left;
     margin: 3%;
     box-shadow: 2px 2px 5px #112e2e49;
 }
 #assignmentform h5{
     text-align: center;
-    margin-top: 5%;
+    margin:5%;
+}
+#asserr{
+    display: none;
+    color: red;
+    font-size: auto;
+    width: 90%;
+    margin: 0 5% 5%;
 }
 #assignmentform label{
     font-size: 12px;
     display: inline;
     margin: 5%;
 }
-#assignmentform input[type=text]{
-    width: 90%;
-    margin: 5%;
+#assignmentform input, select{
+    margin: 0 5% 5%;
     border-radius: 1000px;
+    width: 90%;
     padding-left: 5%;
     box-sizing: border-box;
 }
 #assignmentform button{
     width: 40%;
     height: 3vw;
+    margin: 5%;
     background-color: white;
     border-radius: 10px;
-    bottom:0px;
-    display: inline;
-    margin: 3%;
-    
 }
+#cancelbutton{float: right;}
+
 
 #assignmenttable{
     width: 70%;
@@ -210,21 +217,21 @@ body{
     padding: 0 1vw 2vw 1vw;
     border-radius: 10px;
     box-shadow: 2px 2px 5px #112e2e49;
+    border-collapse: collapse;
+    overflow: hidden;
 }
 #assignmenttable tr{
-    border: solid;
-    border-color: #297373;
-    border-width: 1px;
+    border-radius: 10px;
 }
+tr:nth-child(even) {background-color: #a7dcca;}
 #assignmenttable td{
     width: 12%;
     text-align: center;
-
+    margin: none;
     margin-top: 20px;
-
-
 }
 #assignmenttable th{
+    width: 12%;
     padding: 1vw;
 }
 #assignmenttable button{
